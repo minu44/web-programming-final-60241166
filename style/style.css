@@ -1,0 +1,305 @@
+.human_mask {
+  stroke-width: 3px;
+  stroke: #e6e5e1;
+  stroke-dashoffset: 0;
+  stroke-dasharray: 5000;
+
+  position: absolute;
+  left: -1%;
+  top: 43%;
+  rotate: -10deg;
+  opacity: 1;
+  z-index: 10;
+  pointer-events: none;
+
+  transition-property: transform, opacity;
+  transition-duration: 0.1s, 2s;
+  transition-timing-function: ease;
+
+  animation-name: human_stroke;
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes human_stroke {
+  0% {
+    stroke-dashoffset: 5000;
+  }
+  90% {
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.human_mask_path {
+  pointer-events: auto;
+}
+
+.human-wrapper {
+  width: 893px;
+  height: 1090px;
+  position: absolute;
+  left: -1%;
+  top: 43%;
+  rotate: -10deg;
+  opacity: 0;
+  z-index: 0;
+
+  transition-property: transform, opacity;
+  transition-duration: 0.1s, 2s;
+  transition-timing-function: ease;
+
+  pointer-events: auto;
+}
+
+.human {
+  width: 100%;
+  height: 100%;
+
+  background-image: url("asset/human.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.human::before,
+.human::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: inherit;
+  background-size: inherit;
+  background-repeat: inherit;
+  background-position: inherit;
+  opacity: 0;
+  z-index: -1;
+}
+
+.human.glitch-active {
+  /* 본체도 약간 떨리게 만듦 */
+  animation-name: glitch-shake;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* 첫 번째 복제본: Red/Cyan 효과 및 상단부 클리핑 */
+.human.glitch-active::before {
+  opacity: 1;
+  left: 10px; /* 오른쪽으로 살짝 치우침 */
+  clip-path: inset(0 0 0 0);
+
+  /* 빨간색 필터 효과 */
+  filter: drop-shadow(-10px 0 red);
+
+  animation-name: glitch-anim-1;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+  animation-fill-mode: both;
+}
+
+/* 두 번째 복제본: Blue/Magenta 효과 및 하단부 클리핑 */
+.human.glitch-active::after {
+  opacity: 1;
+  left: -10px; /* 왼쪽으로 살짝 치우침 */
+  clip-path: inset(0 0 0 0);
+
+  /* 파란색 필터 효과 */
+  filter: drop-shadow(10px 0 blue);
+
+  animation-name: glitch-anim-2;
+  animation-duration: 1s;
+  animation-timing-function: steps(2); /* 끊어지는 느낌 */
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+
+.android_mask {
+  stroke-width: 3px;
+  stroke: #e6e5e1;
+  stroke-dashoffset: 0;
+  stroke-dasharray: 5000;
+
+  position: absolute;
+  left: 52%;
+  top: -5%;
+  rotate: -6deg;
+  opacity: 1;
+  z-index: 10;
+  pointer-events: none;
+
+  transition-property: transform, opacity;
+  transition-duration: 0.1s, 2s;
+  transition-timing-function: ease;
+
+  animation-name: android_stroke;
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes android_stroke {
+  0% {
+    stroke-dashoffset: -5000;
+  }
+  90% {
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.android_mask_path {
+  pointer-events: auto;
+}
+
+.android-wrapper {
+  width: 1228px;
+  height: 1381px;
+  position: absolute;
+  left: 52%;
+  top: -5%;
+  rotate: -6deg;
+  opacity: 0;
+  z-index: 0;
+
+  transition-property: transform, opacity;
+  transition-duration: 0.1s, 2s;
+  transition-timing-function: ease;
+
+  pointer-events: auto;
+}
+
+.android {
+  width: 100%;
+  height: 100%;
+
+  background-image: url("asset/android.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.android::before,
+.android::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: inherit;
+  background-size: inherit;
+  background-repeat: inherit;
+  background-position: inherit;
+  opacity: 0;
+  z-index: -1;
+}
+
+.android.glitch-active {
+  /* 본체도 약간 떨리게 만듦 */
+  animation-name: glitch-shake;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* 첫 번째 복제본: Red/Cyan 효과 및 상단부 클리핑 */
+.android.glitch-active::before {
+  opacity: 1;
+  left: 10px; /* 오른쪽으로 살짝 치우침 */
+  clip-path: inset(0 0 0 0);
+
+  /* 빨간색 필터 효과 */
+  filter: drop-shadow(-10px 0 red);
+
+  animation-name: glitch-anim-1;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+  animation-fill-mode: both;
+}
+
+/* 두 번째 복제본: Blue/Magenta 효과 및 하단부 클리핑 */
+.android.glitch-active::after {
+  opacity: 1;
+  left: -10px; /* 왼쪽으로 살짝 치우침 */
+  clip-path: inset(0 0 0 0);
+
+  /* 파란색 필터 효과 */
+  filter: drop-shadow(10px 0 blue);
+
+  animation-name: glitch-anim-2;
+  animation-duration: 1s;
+  animation-timing-function: steps(2); /* 끊어지는 느낌 */
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+
+@keyframes glitch-anim-1 {
+  0% {
+    clip-path: inset(20% 0 80% 0);
+  }
+  20% {
+    clip-path: inset(60% 0 10% 0);
+  }
+  40% {
+    clip-path: inset(40% 0 50% 0);
+  }
+  60% {
+    clip-path: inset(80% 0 5% 0);
+  }
+  80% {
+    clip-path: inset(10% 0 70% 0);
+  }
+  100% {
+    clip-path: inset(30% 0 20% 0);
+  }
+}
+
+@keyframes glitch-anim-2 {
+  0% {
+    clip-path: inset(10% 0 60% 0);
+  }
+  20% {
+    clip-path: inset(30% 0 20% 0);
+  }
+  40% {
+    clip-path: inset(70% 0 10% 0);
+  }
+  60% {
+    clip-path: inset(20% 0 50% 0);
+  }
+  80% {
+    clip-path: inset(60% 0 30% 0);
+  }
+  100% {
+    clip-path: inset(5% 0 80% 0);
+  }
+}
+
+@keyframes glitch-shake {
+  0% {
+    transform: translate(2px, 2px);
+  }
+  25% {
+    transform: translate(-2px, -2px);
+  }
+  50% {
+    transform: translate(-2px, 2px);
+  }
+  75% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(2px, 2px);
+  }
+}
